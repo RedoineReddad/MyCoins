@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MyCoins</string>
+    <string name="placeholderLong">LoremIpsum</string>
+    <string name="placeholderShort">Lor</string>
+    <string name="placeholderMed">Lorem</string>
+    <string name="login">Login</string>
 </resources>
