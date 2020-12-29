@@ -3,6 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="coin"
+            type="com.example.mycoins.network.Coin" />
+    </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -16,6 +21,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:textSize="24sp"
+            android:text="@{coin.market_cap_rank}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/coinLogo"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,6 +36,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
+            app:imageUrl="@{coin.image}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/coinName"
             app:layout_constraintStart_toEndOf="@+id/coinRank"
@@ -45,6 +52,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
+            android:text="@{coin.name}"
             app:layout_constraintBottom_toTopOf="@+id/coinTag"
             app:layout_constraintEnd_toStartOf="@+id/coinPrice"
             app:layout_constraintStart_toEndOf="@+id/coinLogo"
@@ -59,6 +67,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="16dp"
+            android:text="@{coin.symbol}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/coinName"
             app:layout_constraintStart_toStartOf="@id/coinName"
@@ -72,6 +81,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
+            android:text="@{coin.current_price}"
             app:layout_constraintBottom_toTopOf="@id/coinMCap"
             app:layout_constraintEnd_toStartOf="@+id/coinChange24h"
             app:layout_constraintStart_toEndOf="@id/coinName"
@@ -85,6 +95,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="16dp"
+            android:text="@{coin.market_cap}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/coinChange24h"
             app:layout_constraintStart_toEndOf="@id/coinName"
@@ -95,12 +106,12 @@
             android:id="@+id/coinChange24h"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{coin.price_change_percentage_24h}"
             app:layout_constraintStart_toEndOf="@id/coinPrice"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:text="@string/placeholderShort"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </layout>
